@@ -9,15 +9,8 @@ pValues = [1 10 100 1000 10000 100000 1000000];
 finalEstimates = zeros(2,length(pValues));
 history = zeros(length(F),2,length(pValues));
 for j = 1:length(pValues)
-    estimate = zeros(2,1);
-    P = pValues(j)*eye(2);
-    for i = 1:length(F)
-        row = A(i,:);
-        K = P*row'/(1+row*P*row');
-        estimate = estimate+K*(C(i)-row*estimate);
-        P = P-K*row*P;
-        history(i,:,j) = estimate';
-    end
+    [estimate,xx] = rlse(A,C,pValues(j));
+    history(:,:,j) = xx';
     finalEstimates(:,j) = estimate;
 end
 disp('Final estimates for different initial matrices P0 = p*I:');

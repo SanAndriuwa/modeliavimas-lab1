@@ -23,7 +23,13 @@ Tikroji priklausomybė: **t_C = (5/9)t_F - 160/9**.
 
 ## Paleidimas
 
-Atidarykite [lab1_main.m](lab1_main.m) MATLAB programoje ir paspauskite **Run**. Duomenys jau įrašyti skripte. Papildomų toolbox nereikia.
+Atidarykite [lab1_main.m](lab1_main.m) MATLAB programoje ir paspauskite **Run**. Duomenys jau įrašyti skripte. Papildomų toolbox nereikia. Failai [rlse.m](rlse.m) ir [rlse_online.m](rlse_online.m) turi būti tame pačiame aplanke.
+
+## Pateiktos funkcijos naudojimas
+
+Pagrindinis skriptas kviečia `[x,xx] = rlse(A,C,p0)`. Funkcija `rlse()` kiekvienam stebėjimui kviečia pateikto algoritmo `rlse_online()`. Visos trys x, K ir P atnaujinimo formulės iš dėstytojo `rlse.m` išlaikytos.
+
+Pradinis `rlse()` pavyzdys generavo atsitiktinius duomenis su tikrais koeficientais [2;1]. Šiai laboratorinei pridėti įėjimai A, b ir p0; atsitiktiniai duomenys pakeisti užduoties temperatūromis. Grafikai ir palyginimas su `pinv()` atliekami pagrindiniame skripte.
 
 Skriptas atspausdina koeficientus, palyginimą su `pinv()` ir braižo konvergencijos, pradinės matricos bei temperatūros priklausomybės grafikus.
 

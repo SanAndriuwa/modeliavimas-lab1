@@ -2,6 +2,8 @@
 
 Skriptas [lab1_main.m](lab1_main.m) sudaro **A=[F,1]** ir sprendžia **A·k≈C**. Kiekvienas stebėjimas naudojamas vieną kartą.
 
+Algoritmas nėra perrašytas pagrindiniame skripte: jis iš tikrųjų kviečia atskirą [rlse.m](rlse.m), o ši funkcija kviečia [rlse_online.m](rlse_online.m). Tai pateikto `rlse.m` adaptacija realiems duomenims. Atnaujinimo formulės nepakeistos; vietoje atsitiktinių stebėjimų perduodamos temperatūros, o istorijos atmintis rezervuojama iš anksto.
+
 Pradžia: k=[0;0], P=p·I. Kiekvienam stebėjimui su eilute a:
 
 $$K=\frac{Pa^T}{1+aPa^T},\qquad k\leftarrow k+K(C_i-ak),\qquad P\leftarrow P-KaP.$$
