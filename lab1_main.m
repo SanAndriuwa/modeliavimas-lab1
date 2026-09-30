@@ -52,3 +52,9 @@ plot(fGrid,kPinv(1)*fGrid+kPinv(2),'-', ...
     fGrid,reference(1)*fGrid+reference(2),'--');
 xlabel('Fahrenheit'); ylabel('Celsius'); grid on;
 legend('Observations','Estimated relation','Physical relation','Location','best');
+
+% Keep plots readable when MATLAB uses a dark theme.
+set(findall(groot,'Type','figure'),'Color','w');
+set(findall(groot,'Type','axes'),'Color','w','XColor','k','YColor','k');
+set(findall(groot,'Type','legend'),'Color','w','TextColor','k');
+set(findall(groot,'Type','text'),'Color','k');
